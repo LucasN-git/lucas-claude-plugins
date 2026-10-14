@@ -1,0 +1,19 @@
+{
+  "name": "starter",
+  "version": "0.2.0",
+  "description": "One-shot Claude Code onboarding (CLAUDE.md framework, hooks, plugins, MCP servers and CLIs per stack), a cheap single-pass code review, a heavier multi-agent review sized by the diff, HTML reports, the craft of writing skills and CLAUDE.md files, and a pass that strips the generated look from pages and copy.",
+  "author": {
+    "name": "Lucas Nasch"
+  },
+  "license": "MIT",
+  "keywords": [
+    "setup",
+    "onboarding",
+    "review",
+    "skills",
+    "claude-md",
+    "hooks",
+    "mcp",
+    "ai-tells"
+  ]
+}

@@ -1,0 +1,191 @@
+<!doctype html>
+<!--
+  Base template for a report page. One file, no network requests, works offline.
+  Copy it, replace TITLE in <title> and <h1>, fill <main>.
+  Edit CSS only in the "page-specific CSS" zone at the end of <style>.
+
+  Tokens (use these, never raw colour values):
+    accent   --accent --accent-soft
+    text     --ink --muted --faint
+    surface  --bg --surface --surface-2 --line --code-bg
+    severity --ok --ok-bg --warn --warn-bg --danger --danger-bg
+    layout   --radius --maxw      type --font --mono
+  Classes: .lead, .badge(.ok|.warn|.danger), .callout(.ok|.warn|.danger), .kv
+  Pre-styled: h1-h3, p, lists, table, code, pre, details/summary, footer.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TITLE</title>
+<style>
+  :root {
+    --accent: #1f6f6a;
+    --accent-soft: #e3efed;
+    --ink: #1c1d1f;
+    --muted: #5d6166;
+    --faint: #8e9297;
+    --bg: #fbfbfa;
+    --surface: #f2f2ef;
+    --surface-2: #e9e9e5;
+    --line: #dcdcd7;
+    --code-bg: #f0f0ec;
+    --ok: #2d7a3e;     --ok-bg: #e6f2e8;
+    --warn: #9a6200;   --warn-bg: #f7eedc;
+    --danger: #b3261e; --danger-bg: #f8e4e2;
+    --radius: 4px;
+    --maxw: 820px;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --accent: #6cbfb6;
+      --accent-soft: #1d3331;
+      --ink: #e7e7e4;
+      --muted: #a9aca8;
+      --faint: #7c7f7b;
+      --bg: #161716;
+      --surface: #1f201f;
+      --surface-2: #2a2b29;
+      --line: #353734;
+      --code-bg: #232422;
+      --ok: #7cc68b;     --ok-bg: #1d2e20;
+      --warn: #e0b45c;   --warn-bg: #33291a;
+      --danger: #ef8a82; --danger-bg: #3a201e;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.6 var(--font);
+  }
+  main { max-width: var(--maxw); margin: 0; padding: 48px 32px 96px; }
+
+  h1, h2, h3 { line-height: 1.25; font-weight: 650; }
+  h1 { font-size: 1.9rem; margin: 0 0 24px; }
+  h2 { font-size: 1.3rem; margin: 48px 0 12px; }
+  h3 { font-size: 1.05rem; margin: 28px 0 8px; }
+  p, ul, ol { margin: 0 0 14px; }
+  ul, ol { padding-left: 22px; }
+  li { margin: 3px 0; }
+  a { color: var(--accent); }
+  strong { font-weight: 650; }
+
+  .lead {
+    font-size: 1.1rem;
+    padding: 0 0 20px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 8px;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0 6px;
+    border-radius: var(--radius);
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .badge.ok { background: var(--ok-bg); color: var(--ok); }
+  .badge.warn { background: var(--warn-bg); color: var(--warn); }
+  .badge.danger { background: var(--danger-bg); color: var(--danger); }
+
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    padding: 10px 14px;
+    margin: 0 0 16px;
+  }
+  .callout.ok { border-color: var(--ok); background: var(--ok-bg); }
+  .callout.warn { border-color: var(--warn); background: var(--warn-bg); }
+  .callout.danger { border-color: var(--danger); background: var(--danger-bg); }
+  .callout > :last-child { margin-bottom: 0; }
+
+  details { margin: 0 0 16px; border-top: 1px solid var(--line); padding-top: 8px; }
+  summary { cursor: pointer; color: var(--muted); }
+  details[open] > summary { margin-bottom: 8px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.93rem; margin: 0 0 16px; }
+  th, td { text-align: left; vertical-align: top; padding: 7px 10px; border-bottom: 1px solid var(--line); }
+  th { font-weight: 600; color: var(--muted); background: var(--surface); }
+
+  code {
+    font-family: var(--mono);
+    font-size: 0.88em;
+    background: var(--code-bg);
+    border-radius: var(--radius);
+    padding: 1px 4px;
+  }
+  pre {
+    font: 0.85rem/1.5 var(--mono);
+    background: var(--code-bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    overflow-x: auto;
+  }
+  pre code { background: none; padding: 0; }
+
+  .kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 20px; margin: 0 0 16px; }
+  .kv dt { color: var(--muted); }
+  .kv dd { margin: 0; }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem;
+    color: var(--faint);
+  }
+
+  @media (max-width: 600px) { main { padding: 32px 16px 64px; } }
+  @media print {
+    main { padding: 0; max-width: none; }
+    details, table, pre, .callout { break-inside: avoid; }
+  }
+
+  /* page-specific CSS: add page rules below this line, nothing above it */
+</style>
+</head>
+<body>
+<main>
+  <h1>TITLE</h1>
+
+  <p class="lead"><strong>Verdict.</strong> One or two sentences with the bottom line.
+    <strong>Ask:</strong> the one thing the reader has to decide, approve or run.</p>
+
+  <dl class="kv">
+    <dt>Scope</dt><dd>What was examined</dd>
+    <dt>Date</dt><dd>YYYY-MM-DD</dd>
+  </dl>
+
+  <h2>First decision the reader makes</h2>
+  <p><span class="badge warn">warn</span> The finding in one sentence, with the figure that
+    carries it and a pointer to the full material: <code>path/to/file.csv</code>.</p>
+  <details>
+    <summary>12 affected items</summary>
+    <ul>
+      <li><code>item-one</code>: short reason</li>
+      <li><code>item-two</code>: short reason</li>
+    </ul>
+  </details>
+
+  <h2>Second decision the reader makes</h2>
+  <div class="callout danger"><p>A risk that blocks the decision, stated plainly.</p></div>
+  <table>
+    <thead><tr><th>Option</th><th>Cost</th><th>Risk</th></tr></thead>
+    <tbody>
+      <tr><td>Option A</td><td>2 days</td><td><span class="badge ok">low</span></td></tr>
+      <tr><td>Option B</td><td>half a day</td><td><span class="badge danger">high</span></td></tr>
+    </tbody>
+  </table>
+
+  <footer>Method in one line: sources, checks run.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "dev",
+  "version": "0.10.0",
+  "description": "Standards for building apps: a blueprint for apps with data, roles and foreign systems (kickoff, feature, audit); the shell of an internal data app (breadcrumb path, right-hand detail panel, dialogs, tables); desktop and phone shells for consumer apps and PWAs; interface states and forms; rules for charts and data stories (chart-design, data-storytelling).",
+  "author": {
+    "name": "Lucas Nasch"
+  },
+  "license": "MIT",
+  "keywords": [
+    "app-blueprint", "tables", "breadcrumbs", "detail-panel", "data-app-ui", "desktop-shell",
+    "mobile-shell", "architecture", "ux", "frontend", "audit", "interface-states", "forms",
+    "chart-design", "data-storytelling", "charts", "dataviz"
+  ]
+}

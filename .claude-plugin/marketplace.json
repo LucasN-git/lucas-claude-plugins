@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "lucas-claude-plugins",
+  "description": "Claude Code plugins for building apps: machine setup, reviews and skill writing (starter), app UI and UX standards (dev).",
+  "version": "0.1.0",
+  "owner": {
+    "name": "Lucas Nasch"
+  },
+  "plugins": [
+    {
+      "name": "starter",
+      "source": "./plugins/starter",
+      "description": "One-shot Claude Code onboarding (CLAUDE.md framework, permissions, git guard hook, plugins, MCP servers and CLIs per stack), a cheap single-pass review, a heavier multi-agent review sized by the diff, HTML reports, the craft of writing skills and CLAUDE.md files, and a pass that strips the generated look from pages and copy.",
+      "version": "0.2.0",
+      "author": { "name": "Lucas Nasch" },
+      "category": "development",
+      "tags": ["setup", "onboarding", "review", "skills", "claude-md", "hooks", "mcp", "ai-tells"]
+    },
+    {
+      "name": "dev",
+      "source": "./plugins/dev",
+      "description": "Standards for building apps: a blueprint for apps with data, roles and foreign systems; the shell of an internal data app (breadcrumb path, right-hand detail panel, dialogs, tables); desktop and phone shells for consumer apps and PWAs; interface states and forms; rules for charts and data stories. Relies on starter for remove-ai-tells.",
+      "version": "0.10.0",
+      "author": { "name": "Lucas Nasch" },
+      "category": "development",
+      "tags": ["app-blueprint", "data-app-ui", "desktop-shell", "mobile-shell", "ux", "frontend", "audit", "charts", "dataviz"]
+    }
+  ],
+  "metadata": {
+    "description": "Two plugins: starter carries a way of working (setup, review, writing skills); dev carries the UI and UX standards for the apps built with it."
+  }
+}
