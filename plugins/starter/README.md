@@ -1,6 +1,6 @@
 # starter
 
-A compact Claude Code setup for building apps. Six skills that carry a way of working, not a
+A compact Claude Code setup for building apps. Seven skills that carry a way of working, not a
 stack: which model reviews what, when work counts as done, what never goes to production on
 its own, and how instructions for the agent are written.
 
@@ -31,6 +31,7 @@ skips what is already installed, and asks before overwriting anything else.
 | `setup-claude` | One-shot onboarding of a machine. Re-run to refresh the framework blocks. |
 | `quick-review` | One cheap review pass over the current diff before reporting a change as done. |
 | `review` | The heavier tier: a few reviewer agents sized by the diff (one to three, plus one fixer), the coordinator filters, one fix round, an HTML report. Runs the project's `## Gates` before and after. |
+| `playwright-cli` | Drives a website from the shell with Microsoft's `playwright-cli`: forms, clicks, screenshots, checks of a web app. Body and references are the official skill shipped in the `@playwright/cli` package (Apache-2.0), refreshed with `sync-official-skill.sh`; only the frontmatter is ours. |
 | `html-output` | Renders a substantial deliverable (plan, review, report, comparison) as one self-contained HTML page in the browser. |
 | `writing-skills` | The craft of writing skills, subagents, CLAUDE.md files and hooks, including a prose checklist that keeps the text free of AI tells. Complements the official `skill-creator`, which drafts, runs evals and tunes descriptions. |
 | `remove-ai-tells` | Strips the generated look from pages and copy: subtitle stacks, card grids, gradients, marketing filler. It applies the fixes; a bare list of findings counts as a failed run. The `dev` plugin relies on this one. |

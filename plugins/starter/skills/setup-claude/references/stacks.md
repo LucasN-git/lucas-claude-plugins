@@ -20,6 +20,7 @@ Shared base, added for every preset:
 | supabase | `which supabase` | `brew install supabase/tap/supabase` | `supabase login` | `claude mcp add --transport http supabase https://mcp.supabase.com/mcp --scope user` |
 | vercel | `which vercel` | `npm i -g vercel` | `vercel login` | `claude mcp add --transport http vercel https://mcp.vercel.com --scope user` |
 | playwright | none, runs via npx | none | none | `claude mcp add --transport stdio playwright --scope user -- npx @playwright/mcp@latest` |
+| playwright-cli | `npm install -g @playwright/cli` | `playwright-cli --version` | `npm install -g @playwright/cli@latest` | none; `starter:playwright-cli` drives it from the shell |
 
 Supabase and Vercel both need an OAuth round in the browser before their tools answer.
 
@@ -30,6 +31,7 @@ Supabase and Vercel both need an OAuth round in the browser before their tools a
 | docker | `which docker` | `brew install --cask docker-desktop` | none, start the app once | none |
 | ssh | `which ssh` | preinstalled on macOS | key in `~/.ssh/config` for the VPS host | none |
 | playwright | none, runs via npx | none | none | `claude mcp add --transport stdio playwright --scope user -- npx @playwright/mcp@latest` |
+| playwright-cli | `npm install -g @playwright/cli` | `playwright-cli --version` | `npm install -g @playwright/cli@latest` | none; `starter:playwright-cli` drives it from the shell |
 
 The database lives on the VPS, so there is no database MCP server. Access goes through ssh
 and the project's own commands, and the read-only rule for foreign systems applies.

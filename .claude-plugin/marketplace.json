@@ -10,20 +10,44 @@
     {
       "name": "starter",
       "source": "./plugins/starter",
-      "description": "One-shot Claude Code onboarding (CLAUDE.md framework, permissions, git guard hook, plugins, MCP servers and CLIs per stack), a cheap single-pass review, a heavier multi-agent review sized by the diff, HTML reports, the craft of writing skills and CLAUDE.md files, and a pass that strips the generated look from pages and copy.",
-      "version": "0.2.0",
-      "author": { "name": "Lucas Nasch" },
+      "description": "One-shot Claude Code onboarding (CLAUDE.md framework, permissions, git guard hook, plugins, MCP servers and CLIs per stack), a cheap single-pass review, a heavier multi-agent review sized by the diff, HTML reports, browser automation from the shell via the vendored official playwright-cli skill, the craft of writing skills and CLAUDE.md files, and a pass that strips the generated look from pages and copy.",
+      "version": "0.3.0",
+      "author": {
+        "name": "Lucas Nasch"
+      },
       "category": "development",
-      "tags": ["setup", "onboarding", "review", "skills", "claude-md", "hooks", "mcp", "ai-tells"]
+      "tags": [
+        "setup",
+        "onboarding",
+        "review",
+        "skills",
+        "claude-md",
+        "hooks",
+        "mcp",
+        "ai-tells",
+        "playwright"
+      ]
     },
     {
       "name": "dev",
       "source": "./plugins/dev",
       "description": "Standards for building apps: a blueprint for apps with data, roles and foreign systems; the shell of an internal data app (breadcrumb path, right-hand detail panel, dialogs, tables); desktop and phone shells for consumer apps and PWAs; interface states and forms; rules for charts and data stories. Relies on starter for remove-ai-tells.",
       "version": "0.10.0",
-      "author": { "name": "Lucas Nasch" },
+      "author": {
+        "name": "Lucas Nasch"
+      },
       "category": "development",
-      "tags": ["app-blueprint", "data-app-ui", "desktop-shell", "mobile-shell", "ux", "frontend", "audit", "charts", "dataviz"]
+      "tags": [
+        "app-blueprint",
+        "data-app-ui",
+        "desktop-shell",
+        "mobile-shell",
+        "ux",
+        "frontend",
+        "audit",
+        "charts",
+        "dataviz"
+      ]
     }
   ],
   "metadata": {

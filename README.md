@@ -21,7 +21,7 @@ production branch), installs the missing CLIs and MCP servers, writes the framew
 
 | Plugin | Skills |
 |---|---|
-| `starter` | `setup-claude`, `quick-review`, `review` (with four reviewer and fixer agents), `html-output`, `writing-skills`, `remove-ai-tells` |
+| `starter` | `setup-claude`, `quick-review`, `review` (with four reviewer and fixer agents), `html-output`, `playwright-cli` (the official Microsoft skill, vendored), `writing-skills`, `remove-ai-tells` |
 | `dev` | `app-blueprint`, `data-app-ui`, `desktop-shell`, `mobile-shell`, `good-ux`, `chart-design`, `data-storytelling` |
 
 `dev` relies on `starter:remove-ai-tells`; install both from this marketplace. If you already

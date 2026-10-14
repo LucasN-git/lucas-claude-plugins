@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-14 — starter 0.3.0
+
+- starter: `playwright-cli`, the official skill shipped in the `@playwright/cli` package (Microsoft, Apache-2.0), vendored with its references and a sync script; `setup-claude` lists the CLI for the web presets.
+
 ## 2026-10-14 — starter 0.2.0, dev 0.10.0
 
 First public release.
